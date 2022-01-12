@@ -10,9 +10,4 @@ import static org.junit.Assert.*;
 public class IntegerSetTest {
     private static final int NUMITEMS = 5000;
     private IntegerSetTest IST;
-
-    @Before
-    public void setup() {
-        IST = new integerSet();
-    };
 }
