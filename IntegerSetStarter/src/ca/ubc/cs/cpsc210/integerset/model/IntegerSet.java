@@ -26,12 +26,8 @@ public class IntegerSet {
 
     // MODIFIES: this
     // EFFECTS: insert an Integer into the set, if it is not already there,
-    // in which case it does nothing.
-    // if the number is 0 it returns "that's nothing!"
-    // if the number is <0 it returns "that's negative"
-    // if the number is >0 it returns "that's positive"
-    public String insert(Integer anInteger) {
-        // stub
+    public void insert(Integer anInteger) {
+        //stub
     }
 
     // REQUIRES: an Integer is in the set (contains(anInteger) is true)

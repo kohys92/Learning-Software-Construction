@@ -10,16 +10,39 @@ import static org.junit.Assert.*;
  * Unit tests for IntegerSet class
  */
 public class IntegerSetTest {
-    IntegerSet myset;
+    IntegerSet testSet;
 
     @Before
-    public void setup() {
-        myset = new IntegerSet();
+    public void setup(){
+        testSet = new IntegerSet();
     }
 
+
     @Test
-    public void testInsertMiddleOfNagRange() {
-        myset.insert(-5);
-        assertEquals("that's negative!", "that's negative!");
+    public void testInsertNotThere(){
+        checkEmptyDoesntContain(3);
+        testSet.insert(3);
+        checkSetContainsOnce(3);
+    }
+
+
+    @Test
+    public void testInsertAlreadyThere(){
+        checkEmptyDoesntContain(3);
+        testSet.insert(3);
+        checkSetContainsOnce(3);
+        testSet.insert(3);
+        checkSetContainsOnce(3);
+    }
+
+
+    private void checkEmptyDoesntContain(int num) {
+        assertEquals(testSet.size(), 0);
+        assertFalse(testSet.contains(num));
+    }
+
+    private void checkSetContainsOnce(int num) {
+        assertEquals(testSet.size(), 1);
+        assertTrue(testSet.contains(num));
     }
 }
