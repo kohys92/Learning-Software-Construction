@@ -1,23 +1,22 @@
 package model;
 
 public class Coin {
+    private int status;
 
-    private boolean head;
-
-    public Coin(){
-        this.head = true;
-    }
-
-    //REQUIRES: nothing
     //MODIFIES: this
     //EFFECTS: changes the state of the coin head/tail
     public void flip(){
-        this.head = ! this.head;
+        status = (int) Math.round(Math.random());
     }
 
     //EFFECTS: returns the status of the coin
-    public boolean checkStatusForHead() {
-        return this.head;
+    public String checkStatus() {
+        if(this.status == 1){
+            return "Head";
+        }
+        else{
+            return "Tail";
+        }
     }
 
 }
