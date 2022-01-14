@@ -15,18 +15,22 @@ public class IntegerSet {
 
     // EFFECTS: return the number of integers in the set
     public int size () {
-        //stub
+        return 0;
 
     }
 
     // EFFECTS: return true if an Integer is in the set, false otherwise
     public boolean contains (Integer anInteger) {
-        // stub
+        return false;
     }
 
     // MODIFIES: this
-    // EFFECTS: insert an Integer into the set, if it is not already there
-    public void insert(Integer anInteger) {
+    // EFFECTS: insert an Integer into the set, if it is not already there,
+    // in which case it does nothing.
+    // if the number is 0 it returns "that's nothing!"
+    // if the number is <0 it returns "that's negative"
+    // if the number is >0 it returns "that's positive"
+    public String insert(Integer anInteger) {
         // stub
     }
 

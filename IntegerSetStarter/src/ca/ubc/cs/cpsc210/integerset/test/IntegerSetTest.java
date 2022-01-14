@@ -1,6 +1,8 @@
 package ca.ubc.cs.cpsc210.integerset.test;
 
+import ca.ubc.cs.cpsc210.integerset.model.IntegerSet;
 import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +10,16 @@ import static org.junit.Assert.*;
  * Unit tests for IntegerSet class
  */
 public class IntegerSetTest {
-    private static final int NUMITEMS = 5000;
-    private IntegerSetTest IST;
+    IntegerSet myset;
+
+    @Before
+    public void setup() {
+        myset = new IntegerSet();
+    }
+
+    @Test
+    public void testInsertMiddleOfNagRange() {
+        myset.insert(-5);
+        assertEquals("that's negative!", "that's negative!");
+    }
 }
