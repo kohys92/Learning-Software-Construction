@@ -27,7 +27,16 @@ public class TranscriptTest {
         testTranscript.addGrade("CPSC-310", 3.0);
         testTranscript.addGrade("CPSC-410", 3.0);
 
-        assertEquals(testTranscript.getCourseAndGrade("CPSC-210"), 4.0);
+        assertEquals(testTranscript.getCourseAndGrade("CPSC-210"), "CPSC-210: " + 4.0);
+    }
+
+    @Test
+    public void testGetGPAOfStudent(){
+        testTranscript.addGrade("CPSC-210", 4.0);
+        testTranscript.addGrade("CPSC-310", 3.0);
+        testTranscript.addGrade("CPSC-410", 3.0);
+        testTranscript.addGrade("CPSC-210", 2.0);
+        assertEquals(testTranscript.getSizeOfCoursesTaken(), 4);
     }
 
     @Test

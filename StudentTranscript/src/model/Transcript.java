@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -12,41 +13,43 @@ public class Transcript {
     private int studentID;
     private List<String> courses;
     private List<Double> grades;
+    private double gpa;
 
     public Transcript(String studentName, int studentID){
         this.studentName = studentName;
         this.studentID = studentID;
-
+        courses = new ArrayList<>();
+        grades = new ArrayList<>();
     }
 
     // getters
     public String getStudentName(){
-        return null;
+        return this.studentName;
     }
 
     // getters
     public int getStudentID(){
-        return 0;
+        return this.studentID;
     }
 
     // setters
     public void setStudentName(String studentName){
-        //stub
+        this.studentName = studentName;
     }
 
     // setters
     public void setStudentID(int studentID){
-        //stub
+        this.studentID = studentID;
     }
 
-    // getters0
-    public int getSize(){
-        return 0;
+    // getters
+    public int getSizeOfCoursesTaken(){
+        return courses.size();
     }
 
     //EFFECT: returns true/false to see the course is taken
     public boolean isCourseTaken(String course){
-        return false;
+        return courses.contains(course);
     }
 
     //REQUIRES: the grade should be between 0.0 and 4.0, and/or
@@ -54,14 +57,15 @@ public class Transcript {
     //MODIFIES: this
     //EFFECTS: adds a grade into a transcript
     public void addGrade(String course, double grade){
-        //stub
+        courses.add(course);
+        grades.add(grade);
     }
 
     //REQUIRES: a course the student has already taken
     //MODIFIES: nothing
     //EFFECTS: return course name and grade in format CourseName: Grade
     public String getCourseAndGrade(String course){
-        return null;
+        return course + ": " + grades.get(courses.indexOf(course));
     }
 
     //REQUIRES: nothing
@@ -69,14 +73,19 @@ public class Transcript {
     //EFFECTS: prints a transcript with course names and grades
     //         and displays student academic record
     public void printTranscript(){
-        //stub
+        for(int i=0; i < courses.size(); i++) {
+            System.out.print(courses.get(i) + ": " + grades.get(i) + ",");
+        }
     }
 
     //REQUIRES: nothing
     //MODIFIES: nothing
     //EFFECTS: calculates the GPA and returns the GPA
-    public double getGPA(){
-        return 0.0;
+    public String getGPA(){
+        for(double n : grades){
+            this.gpa = gpa + n;
+        }
+        return "\nGPA:" + gpa/grades.size();
     }
 
 }
