@@ -9,6 +9,5 @@ public class Main {
 
         myCoin.flip();
         System.out.println(myCoin.checkStatus());
-
     }
 }

@@ -1,22 +1,24 @@
 package model;
 
+import java.util.Random;
+
 public class Coin {
-    private int status;
+    private Random ran;
+    private boolean coinFaceUp;
 
     //MODIFIES: this
     //EFFECTS: changes the state of the coin head/tail
     public void flip(){
-        status = (int) Math.round(Math.random());
+        ran = new Random();
+        coinFaceUp = ran.nextBoolean();
     }
 
     //EFFECTS: returns the status of the coin
     public String checkStatus() {
-        if(this.status == 1){
+        if(coinFaceUp){
             return "Head";
         }
-        else{
-            return "Tail";
-        }
+        return "Tail";
     }
 
 }
