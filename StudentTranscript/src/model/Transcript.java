@@ -1,6 +1,28 @@
 package model;
 
 public class Transcript {
+    private String studentName;
+    private int studentID;
+
+    public Transcript(String studentName, int studentID){
+        this.studentName = studentName;
+        this.studentID = studentID;
+    }
+
+    // getters
+    public String getStudentName(){
+        return null;
+    }
+
+    // setters
+    public void setStudentName(){
+        //stub
+    }
+
+    // setters
+    public void setStudentID(){
+        //stub
+    }
 
     //REQUIRES: the grade should be between 0.0 and 4.0, and/or
     //          the course should not be null
