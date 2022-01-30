@@ -1,6 +1,6 @@
 package ca.ubc.cs.cpsc210.integerset.test;
 
-import ca.ubc.cs.cpsc210.integerset.model.IntegerSet;
+import ca.ubc.cs.cpsc210.integerset.model.LowVolumeIntegerSet;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,12 +9,12 @@ import static org.junit.Assert.*;
 /**
  * Unit tests for IntegerSet class
  */
-public class IntegerSetTest {
-    IntegerSet testSet;
+public class LowVolumeIntegerSetTest {
+    LowVolumeIntegerSet testSet;
 
     @Before
     public void setup(){
-        testSet = new IntegerSet();
+        testSet = new LowVolumeIntegerSet();
     }
 
 
@@ -35,6 +35,14 @@ public class IntegerSetTest {
         checkSetContainsOnce(3);
     }
 
+    @Test
+    public void testInsertHighVolume() {
+        for ( int i=0; i<5000; i ++){
+            testSet.insert(i);
+            assertTrue(testSet.contains(i));
+            assertEquals(testSet.size(), i+1);
+        }
+    }
 
     private void checkEmptyDoesntContain(int num) {
         assertEquals(testSet.size(), 0);
