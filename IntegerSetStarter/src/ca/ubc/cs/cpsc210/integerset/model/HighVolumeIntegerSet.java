@@ -27,6 +27,7 @@ public class HighVolumeIntegerSet implements IntegerSet{
     // EFFECTS: insert an Integer into the set, if it is not already there,
     @Override
     public void insert(Integer anInteger) {
+        System.out.println("This is Super method used!");
         data.add(anInteger);
     }
 

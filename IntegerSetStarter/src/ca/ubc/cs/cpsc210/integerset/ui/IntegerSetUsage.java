@@ -1,5 +1,7 @@
 package ca.ubc.cs.cpsc210.integerset.ui;
 
+import ca.ubc.cs.cpsc210.integerset.model.ChattyIntegerSet;
+import ca.ubc.cs.cpsc210.integerset.model.IntegerSet;
 import ca.ubc.cs.cpsc210.integerset.model.LowVolumeIntegerSet;
 
 /**
@@ -10,5 +12,9 @@ public class IntegerSetUsage {
         LowVolumeIntegerSet mySet = new LowVolumeIntegerSet();
         mySet.insert(3);
         mySet.remove(3);
+
+        // Example of using super method from upper class
+        IntegerSet chattySet = new ChattyIntegerSet();
+        chattySet.insert(5);
     }
 }
