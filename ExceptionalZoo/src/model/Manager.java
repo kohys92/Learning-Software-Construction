@@ -22,6 +22,8 @@ public class Manager {
 //            e.printStackTrace();
             System.out.println("Feed less often!");
             throw new BrokeException();
+        } finally {
+            System.out.println("Regardless of what is happened!");
         }
     }
 }

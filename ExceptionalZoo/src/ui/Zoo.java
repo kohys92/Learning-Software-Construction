@@ -22,6 +22,8 @@ public class Zoo {
         } catch (BrokeException e) {
 //            e.printStackTrace();
             System.out.println("REDUCE COSTS!!!");
+        } finally {
+            System.out.println("...profits");
         }
     }
 }
