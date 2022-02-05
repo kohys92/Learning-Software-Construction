@@ -20,7 +20,6 @@ public class Zoo {
         try {
             manager.manage();
         } catch (BrokeException e) {
-//            e.printStackTrace();
             System.out.println("REDUCE COSTS!!!");
         } finally {
             System.out.println("...profits");
