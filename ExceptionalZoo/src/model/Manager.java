@@ -2,6 +2,7 @@ package model;
 
 import exceptions.BrokeException;
 import exceptions.DidntEat;
+import exceptions.MessyException;
 
 import java.util.List;
 
@@ -21,8 +22,11 @@ public class Manager {
         } catch (DidntEat didntEat) {
             System.out.println("Get the doctor!");
             throw new BrokeException();
+        } catch (MessyException messyException) {
+            System.out.println("Messy exception is caught!");
         } finally {
             System.out.println("Finally Manager Says: Regardless of what is happened!");
         }
+        System.out.println("Whatever goes on this will print");
     }
 }

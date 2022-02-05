@@ -15,7 +15,7 @@ public class Animal {
             System.out.println("Animal not hungry!");
             throw new NotHungry();
         }
-        if(!isAllergic){
+        if(isAllergic){
             System.out.println("Animal allergic!");
             throw new AllergyException();
         }
