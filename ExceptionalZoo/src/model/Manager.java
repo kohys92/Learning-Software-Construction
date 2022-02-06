@@ -23,10 +23,10 @@ public class Manager {
             System.out.println("Get the doctor!");
             throw new BrokeException();
         } catch (MessyException messyException) {
-            System.out.println("Messy exception is caught!");
+            System.out.println("Keeper, you're fired!!");
         } finally {
             System.out.println("Finally Manager Says: Regardless of what is happened!");
         }
-        System.out.println("Whatever goes on this will print");
+        System.out.println("Everything goes on as normal");
     }
 }
